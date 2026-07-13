@@ -13,4 +13,13 @@ def userinfo():
     Weight=int(input("Current Weight(kgs): "))
     Goal_Weight=int(input("Goal Weight(kgs): "))
 
-    
+    FitnessGoal=int(input("FITNESS GOAL: 1 for Lose Fat , 2 for Muscle Building , 3 for Maintaining Weight :"))
+    if FitnessGoal==1:
+        FitnessGoal="Lose Fat"
+    elif FitnessGoal==2:
+        FitnessGoal="Muscle Building"
+    elif FitnessGoal==3:
+        FitnessGoal="Maintaining Weight"
+    else:
+        FitnessGoal="Muscle Building"
+        print("invalid input")
