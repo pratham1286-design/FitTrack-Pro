@@ -25,4 +25,11 @@ def userinfo():
         print("invalid input")
     
 
-    
+    from datetime import date
+    today=date.today()
+
+    import pandas as pd 
+    df=pd.read_csv("userinfo.csv")
+    new_row={"Date":today,"Name":Name,"Age":Age,"Gender":gender,"Height":Height,"Weight":Weight,"Goal Weight":Goal_Weight,"Fitness Goal":FitnessGoal}
+    df.loc[len(df)]=new_row
+    df.to_csv("userinfo.csv",index=False)
