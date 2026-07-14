@@ -8,6 +8,12 @@ def workouttracker():
 
     def selfworkouts():
         print("hello")
+        from datetime import date
+        today=date.today()
+        import csv
+        with open("workouts.csv","a",newline="") as f:
+            writer=csv.writer(f)
+            writer.writerow([today,])
         
     def suggestedworkouts():
         while True:
