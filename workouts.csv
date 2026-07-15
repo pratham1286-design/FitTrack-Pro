@@ -1,1 +1,1 @@
-Date,Exercise,Sets,Reps,Weight_Lifted,Duration,Calories
+Date,Type,Exercise,Sets,Reps,Weight_Lifted(kg),Duration(mins),Calories(kcal)
