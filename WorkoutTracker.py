@@ -14,7 +14,7 @@ def workouttracker():
             day=int(input("Choose the day(1,2,3,4,5,6):"))
             if day in  [1,2,3,4,5]:
                 import csv
-                with open("workouts.csv","a",newline="") as file
+                with open("workouts.csv","a",newline="") as file:
                 writer=csv.writer(file)
                 writer.writerows(beginner_exercise)
             elif day==6:
