@@ -2,7 +2,7 @@ def workouttracker():
     from  datetime import date
     today=date.today()
     def beginnertemplate():
-        beginner_exercise:[[today,"beginner","Lat Pulldown",3,12,15,10,30],[today,"beginner","Bicep Curls",3,12,5,10,20],[today,"beginner","Tricep Bar Pushdown",3,12,15,10,20],[today,"beginner","Pushups",3,12,0,10,35],[today,"beginner","Squats",3,12,0,10,25]]
+        beginner_exercise=[[today,"beginner","Lat Pulldown",3,12,15,10,30],[today,"beginner","Bicep Curls",3,12,5,10,20],[today,"beginner","Tricep Bar Pushdown",3,12,15,10,20],[today,"beginner","Pushups",3,12,0,10,35],[today,"beginner","Squats",3,12,0,10,25]]
         while True:
             print("Choose the Week day:")
             print("1 - Day1")
@@ -15,8 +15,11 @@ def workouttracker():
             if day in  [1,2,3,4,5]:
                 import csv
                 with open("workouts.csv","a",newline="") as file:
-                writer=csv.writer(file)
-                writer.writerows(beginner_exercise)
+                    writer=csv.writer(file)
+                    writer.writerows(beginner_exercise)
+                for exercise in beginner_exercise:
+                    date,level,name,sets,reps,weight,duration,calories=exercise
+                    print(f"{date} : {level} - {name} : {sets}sets*{reps}reps , {duration}mins")
             elif day==6:
                 break
             else:
