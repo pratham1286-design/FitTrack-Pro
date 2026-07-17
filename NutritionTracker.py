@@ -8,16 +8,45 @@ def nutrition():
         while True:
             Type=int(input("1 - Breakfast/2 - Lunch/3 - Dinner/4 - Exit: "))
             if Type==1:
-                break_food=input("Add breakfast: ")
-                quantity=int(input("Food Quantity: "))
-                calories=int(input("Add Calories: "))
-                protein=int(input("Add Protein: "))
-                Carbs=int(input("Add Carbs: "))
-                Fat=int(input("Add Fat: "))
+                break_food=input("Add Breakfast: ")
+                bquantity=int(input("Food Quantity: "))
+                bcalories=int(input("Add Calories: "))
+                bprotein=int(input("Add Protein: "))
+                bCarbs=int(input("Add Carbs: "))
+                bFat=int(input("Add Fat: "))
                 import csv
-                with open("nutrition.csv","a",newline="") as file:
-                    writer=csv.writer(file)
-                    writer.writerow([date,time,"Breakfast",break_food,quantity,"g",calories,protein,Carbs,Fat])
+                with open("nutrition.csv","a",newline="") as nfile:
+                    writer=csv.writer(nfile)
+                    writer.writerow([date,time,"Breakfast",break_food,bquantity,"g",bcalories,bprotein,bCarbs,bFat])
+                print("Added Food: ",break_food,",Quantity: ",bquantity,"g",",Calories: ",bcalories,",protein: ",bprotein,"g",",Carbs: ",bCarbs,"g",",Fat: ",bFat)
+            elif Type==2:
+                lunch_food=input("Add Lunch: ")
+                lquantity=int(input("Food Quantity: "))
+                lcalories=int(input("Add Calories: "))
+                lprotein=int(input("Add Protein: "))
+                lCarbs=int(input("Add Carbs: "))
+                lFat=int(input("Add Fat: "))
+                import csv
+                with open("nutrition.csv","a",newline="") as lfile:
+                    writer=csv.writer(lfile)
+                    writer.writerow([date,time,"Lunch",lunch_food,lquantity,"g",lcalories,lprotein,lCarbs,lFat])
+                print("Added Food: ",lunch_food,",Quantity: ",lquantity,"g",",Calories: ",lcalories,",protein: ",lprotein,"g",",Carbs: ",lCarbs,"g",",Fat: ",lFat)
+            elif Type==3:
+                dinner_food=input("Add Dinner: ")
+                dquantity=int(input("Food Quantity: "))
+                dcalories=int(input("Add Calories: "))
+                dprotein=int(input("Add Protein: "))
+                dCarbs=int(input("Add Carbs: "))
+                dFat=int(input("Add Fat: "))
+                import csv
+                with open("nutrition.csv","a",newline="") as dfile:
+                    writer=csv.writer(dfile)
+                    writer.writerow([date,time,"Dinner",dinner_food,dquantity,"g",dcalories,dprotein,dCarbs,dFat])
+                print("Added Food: ",dinner_food,",Quantity: ",dquantity,"g",",Calories: ",dcalories,",protein: ",dprotein,"g",",Carbs: ",dCarbs,"g",",Fat: ",dFat)
+            elif Type==4:
+                break
+            else :
+                print("Invalid Input")
     def search_food():
         pass
     def delete_food():
