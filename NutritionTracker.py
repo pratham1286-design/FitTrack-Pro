@@ -48,12 +48,15 @@ def nutrition():
             else :
                 print("Invalid Input")
     def search_food():
-        pass
+        while True:
+        import csv
+        food=input("Enter ")
+        found=False
     def delete_food():
         pass
     def total_calories():
         pass
-    def marcos():
+    def macros():
         pass
     def protein_guide():
         pass
@@ -76,7 +79,7 @@ def nutrition():
         elif nut==4:
             total_calories()
         elif nut==5:
-            marcos()
+            macros()
         elif nut==6:
             protein_guide()
         elif nut==7:
