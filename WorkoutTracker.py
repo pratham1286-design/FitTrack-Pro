@@ -46,9 +46,9 @@ def workouttracker():
                 Duration=int(input("Duration in minutes: "))
                 Calories=int(input("Calories(kcal): "))
                 import csv
-                with open("workouts.csv","a",newline="") as f:
-                    writer=csv.writer(f)
-                    writer.writerow([today,"Self",Exercise,Sets,Reps,Weight_Lifted,Duration,Calories])
+                with open("workouts.csv","a",newline="") as file:
+                    writer=csv.writer(file)
+                    writer.writerow([today,"self",Exercise,Sets,Reps,Weight_Lifted,Duration,Calories])
             elif sel==2:
                 break
             else:

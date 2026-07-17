@@ -1,1 +1,1 @@
-Date,Time,Food_Name,Quantity,Unit,Calories,Protein(g),Carbs(g),Fat(g)
+Date,Time,Type,Food_Name,Quantity,Unit,Calories,Protein(g),Carbs(g),Fat(g)

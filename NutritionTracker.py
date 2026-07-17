@@ -3,13 +3,21 @@ def nutrition():
     now=datetime.now()
     date=now.strftime("%d-%m-%Y")
     time=now.strftime("%H:%M:%S")
-    today=date.today()
+    
     def add_food():
         while True:
             Type=int(input("1 - Breakfast/2 - Lunch/3 - Dinner/4 - Exit: "))
             if Type==1:
-                food=input("Add breakfast: ")
-                
+                break_food=input("Add breakfast: ")
+                quantity=int(input("Food Quantity: "))
+                calories=int(input("Add Calories: "))
+                protein=int(input("Add Protein: "))
+                Carbs=int(input("Add Carbs: "))
+                Fat=int(input("Add Fat: "))
+                import csv
+                with open("nutrition.csv","a",newline="") as file:
+                    writer=csv.writer(file)
+                    writer.writerow([date,time,"Breakfast",break_food,quantity,"g",calories,protein,Carbs,Fat])
     def search_food():
         pass
     def delete_food():
