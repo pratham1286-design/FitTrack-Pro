@@ -1,5 +1,8 @@
 def nutrition():
-    from datetime import date
+    from datetime import datetime
+    now=datetime.now()
+    date=now.strftime("%d-%m-%Y")
+    time=now.strftime("%H:%M:%S")
     today=date.today()
     def add_food():
         while True:
