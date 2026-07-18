@@ -1,10 +1,10 @@
 def nutrition():
     def add_food():
-        from datetime import datetime
-        now=datetime.now()
-        date=now.strftime("%d-%m-%Y")
-        time=now.strftime("%H:%M:%S")
         while True:
+            from datetime import datetime
+            now=datetime.now()
+            date=now.strftime("%d-%m-%Y")
+            time=now.strftime("%H:%M:%S")
             Type=int(input("1 - Breakfast/2 - Lunch/3 - Dinner/4 - Exit: "))
             if Type==1:
                 break_food=input("Add Breakfast: ")
@@ -50,11 +50,11 @@ def nutrition():
             else :
                 print("Invalid Input")
     def search_food():
-        from datetime import datetime
-        now=datetime.now()
-        date=now.strftime("%d-%m-%Y")
-        time=now.strftime("%H:%M:%S")
         while True:
+            from datetime import datetime
+            now=datetime.now()
+            date=now.strftime("%d-%m-%Y")
+            time=now.strftime("%H:%M:%S")
             print("Choose the option :-")
             print("1 - Search by FOOD NAME")
             print("2 - Search by DATE")
@@ -109,8 +109,24 @@ def nutrition():
         from datetime import datetime
         import csv
         while True:
-            choose=int(input("1 - To See Total Calories of a particular date / 2 - Exit : "))
+            choose=int(input("1 - Total Calories of Today / 2 - To See Total Calories of a particular date / 2 - Exit : "))
             if choose==1:
+                from datetime import date
+                today=date.today().strftime("%d-%m-%Y")
+                with open("nutrition.csv","r") as file:
+                    reader=csv.reader(file)
+                    next(reader)
+                    totalcals=0
+                    found=False
+                    for row in reader:
+                        if row[0]==today:
+                            totalcals+=float(row[6])
+                            found=True
+                if found:
+                    print("Total Calories",totalcals)
+                else:
+                    print("No Food Entry on this date")
+            elif choose==2:
                 newuserdate=input("Enter date(dd-mm-yyyy): ")
                 try:
                     datetime.strptime(newuserdate,"%d-%m-%Y")#for checking if date is valid
@@ -130,7 +146,7 @@ def nutrition():
                     print("Total Calories: ",totalcals)
                 else:
                     print("No Food Entry on this date")
-            elif choose==2:
+            elif choose==3:
                 break
             else:
                 print("Invalid Input")
