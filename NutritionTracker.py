@@ -105,8 +105,6 @@ def nutrition():
                 break
             else:
                 print("invalid input")
-    def delete_food():
-        pass
     def total_calories():
         pass
     def macros():
@@ -117,25 +115,22 @@ def nutrition():
         print("======NUTRITION======")
         print("1 - Add Food")
         print("2 - Search Food")
-        print("3 - Delete Food")
-        print("4 - Total Calories")
-        print("5 - Total Macros")
-        print("6 - Protein Guide")
-        print("7 - Exit")
-        nut=int(input("Select the option(1,2,3,4,5,6,7): "))
+        print("3 - Total Calories")
+        print("4 - Total Macros")
+        print("5 - Protein Guide")
+        print("6 - Exit")
+        nut=int(input("Select the option(1,2,3,4,5,6,): "))
         if nut==1:
             add_food()
         elif nut==2:
             search_food()
         elif nut==3:
-            delete_food()
-        elif nut==4:
             total_calories()
-        elif nut==5:
+        elif nut==4:
             macros()
-        elif nut==6:
+        elif nut==5:
             protein_guide()
-        elif nut==7:
+        elif nut==6:
             break
         else:
             print("Invalid Input")
