@@ -2,5 +2,7 @@ print("="*55)
 print("                 FIT TRACK PRO")
 print("         Personal Fitness Management System")
 print("="*55)
-from WorkoutTracker import workouttracker
-workouttracker()
+# from WorkoutTracker import workouttracker
+# workouttracker()
+from NutritionTracker import nutrition
+nutrition()
