@@ -49,9 +49,33 @@ def nutrition():
                 print("Invalid Input")
     def search_food():
         while True:
-        import csv
-        food=input("Enter ")
-        found=False
+            print("Choose the option :-")
+            print("1 - Search by FOOD NAME")
+            print("2 - Search by DATE")
+            print("3 - EXIT")
+            sea=int(input("Choose how you want to search(1,2,3): "))
+            if sea==1:
+                food=input("Enter Food name to search: ").lower()
+                found=False
+                with open("nutrition.csv","r") as sfile:
+                    reader=csv.reader(sfile)
+                    next(reader)#ignores header
+                for row in reader:
+                    if row[3].lower()==food:
+                        print("-"*25)
+                        print("Date: ",row[0])
+                        print("Time: ",row[1])
+                        print("Meal: ",row[2])
+                        print("Food: ",row[3])
+                        print("Quantity: ",row[4],row[5])
+                        print("Calories: ",row[6])
+                        print("Protein: ",row[7],"g")
+                        print("Carbs: ",row[8],"g")
+                        print("Fat: ",row[9],"g")
+                        print("-"*25)
+                        found=True
+                    if not found:
+                        print("Food not found")
     def delete_food():
         pass
     def total_calories():
