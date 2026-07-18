@@ -50,12 +50,16 @@ def nutrition():
             else :
                 print("Invalid Input")
     def search_food():
+        from datetime import datetime
+        now=datetime.now()
+        date=now.strftime("%d-%m-%Y")
+        time=now.strftime("%H:%M:%S")
         while True:
             print("Choose the option :-")
             print("1 - Search by FOOD NAME")
             print("2 - Search by DATE")
             print("3 - EXIT")
-            sea=int(input("Choose how you want to search(1,2,3): "))
+            sea=int(input("Choose what you want to do(1,2,3): "))
             if sea==1:
                 food=input("Enter Food name to search: ").lower()
                 found=False
@@ -80,7 +84,27 @@ def nutrition():
                     if not found:
                         print("Food not found")
             elif sea==2:
-
+                date=input("Enter date(dd-mm-yyyy): ")
+                try:
+                    datetime.strptime(date,"%d-%m-%Y")#for checking if date is valid
+                except ValueError:
+                    print("Invalid Date!,please enter a valid date in the format dd-mm-yyyy.")
+                    return
+                found=False
+                import csv
+                with open("nutrition.csv","r") as sfile:
+                    reader=csv.reader(sfile)
+                    next(reader)#ignores header
+                for row in reader:
+                    if row[0]==date:
+                        print(row)
+                        found=True
+                    if not found:
+                        print("no food entry on this date")
+            elif sea==3:
+                break
+            else:
+                print("invalid input")
     def delete_food():
         pass
     def total_calories():
