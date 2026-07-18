@@ -59,6 +59,7 @@ def nutrition():
             if sea==1:
                 food=input("Enter Food name to search: ").lower()
                 found=False
+                import csv
                 with open("nutrition.csv","r") as sfile:
                     reader=csv.reader(sfile)
                     next(reader)#ignores header
