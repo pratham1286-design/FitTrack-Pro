@@ -191,7 +191,7 @@ def nutrition():
                         elif tot==4:
                             print("Total Today's Fats",totalfats)
                         elif tot==5:
-                            continue
+                            break
                         else:
                             print("Invalid Input")
                 else:
@@ -236,7 +236,7 @@ def nutrition():
                         elif tota==4:
                             print("Total ",newuserdate," Fats",totalfats)
                         elif tota==5:
-                            continue
+                            break
                         else:
                             print("Invalid Input")
                 else:
