@@ -109,7 +109,7 @@ def nutrition():
         from datetime import datetime
         import csv
         while True:
-            choose=int(input("1 - Total Calories of Today / 2 - To See Total Calories of a particular date / 2 - Exit : "))
+            choose=int(input("1 - Total Calories of Today / 2 - To See Total Calories of a particular date / 3 - Exit : "))
             if choose==1:
                 from datetime import date
                 today=date.today().strftime("%d-%m-%Y")
@@ -154,7 +154,7 @@ def nutrition():
         from datetime import datetime
         import csv
         while True:
-            choose=int(input("1 - Total of All Macros of Today / 2 - To See Total of All Macros of a particular date / 2 - Exit : "))
+            choose=int(input("1 - Total of All Macros of Today / 2 - To See Total of All Macros of a particular date / 3 - Exit : "))
             if choose==1:
                 from datetime import date
                 today=date.today().strftime("%d-%m-%Y")
@@ -172,7 +172,6 @@ def nutrition():
                             totalfats+=float(row[9])
                             found=True
                 if found:
-                    print("Total Calories",totalcals)
                     while True:
                         print("choose what you want to Total of:")
                         print("1 - All")
@@ -182,7 +181,19 @@ def nutrition():
                         print("5 - Exit")
                         tot=int(input("choose between(1,2,3,4,5):"))
                         if tot==1:
-                            print("Total Today's Protein")
+                            print("Total Today's Protein",totalpro)
+                            print("Total Today's Carbs",totalcarbs)
+                            print("Total Today's Fats",totalfats)
+                        elif tot==2:
+                            print("Total Today's Protein",totalpro)
+                        elif tot==3:
+                            print("Total Today's Carbs",totalcarbs)
+                        elif tot==4:
+                            print("Total Today's Fats",totalfats)
+                        elif tot==5:
+                            continue
+                        else:
+                            print("Invalid Input")
                 else:
                     print("No Food Entry on this date")
             elif choose==2:
@@ -195,14 +206,39 @@ def nutrition():
                 with open("nutrition.csv","r") as file:
                     reader=csv.reader(file)
                     next(reader)
-                    totalcals=0
+                    totalpro=0
+                    totalcarbs=0
+                    totalfats=0
                     found=False
                     for row in reader:
                         if row[0]==newuserdate:
-                            totalcals+=float(row[6])
+                            totalpro+=float(row[7])
+                            totalcarbs+=float(row[8])
+                            totalfats+=float(row[9])
                             found=True
                 if found:
-                    print("Total Calories: ",totalcals)
+                    while True:
+                        print("choose what you want to Total of:")
+                        print("1 - All")
+                        print("2 - Protein")
+                        print("3 - Carbs")
+                        print("4 - Fats")
+                        print("5 - Exit")
+                        tota=int(input("choose between(1,2,3,4,5):"))
+                        if tota==1:
+                            print("Total ",newuserdate," Protein",totalpro)
+                            print("Total ",newuserdate," Carbs",totalcarbs)
+                            print("Total ",newuserdate," Fats",totalfats)
+                        elif tota==2:
+                            print("Total ",newuserdate," Protein",totalpro)
+                        elif tota==3:
+                            print("Total ",newuserdate," Carbs",totalcarbs)
+                        elif tota==4:
+                            print("Total ",newuserdate," Fats",totalfats)
+                        elif tota==5:
+                            continue
+                        else:
+                            print("Invalid Input")
                 else:
                     print("No Food Entry on this date")
             elif choose==3:
