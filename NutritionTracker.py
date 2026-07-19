@@ -246,7 +246,7 @@ def nutrition():
             else:
                 print("Invalid Input")
     def protein_guide():
-        pass
+    
     while True:
         print("======NUTRITION======")
         print("1 - Add Food")
