@@ -246,11 +246,7 @@ def nutrition():
             else:
                 print("Invalid Input")
     def protein_guide():
-        protein_guide = {
-    "Soya Chunks": 5.2,
-    "Whey Protein": 8.0,
-    "Chicken Breast": 3.1,
-    "Peanuts": 2.6,
+        protein_guide = {"Soya Chunks": 5.2,"Whey Protein": 8.0,"Chicken Breast": 3.1,"Peanuts": 2.6,
     "Fish": 2.3,
     "Almonds": 2.1,
     "Paneer": 1.9,
