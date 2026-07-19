@@ -246,26 +246,11 @@ def nutrition():
             else:
                 print("Invalid Input")
     def protein_guide():
-        protein_guide = {"Soya Chunks": 5.2,"Whey Protein": 8.0,"Chicken Breast": 3.1,"Peanuts": 2.6,
-    "Fish": 2.3,
-    "Almonds": 2.1,
-    "Paneer": 1.9,
-    "Tofu": 1.6,
-    "Oats": 1.3,
-    "Greek Yogurt": 1.0,
-    "Dal": 0.5,
-    "Rajma": 0.9,
-    "Chole": 0.9,
-    "Milk": 0.34,
-    "Roti": 1.0,
-    "Rice": 0.3
-}
-
-print(f"{'Food':<20}{'Protein/10 g'}")
-print("-" * 35)
-
-for food, protein in protein_guide.items():
-    print(f"{food:<20}{protein}")
+        protein_guide = {"Soya Chunks": 5.2,"Whey Protein": 8.0,"Chicken Breast": 3.1,"Peanuts": 2.6,"Fish": 2.3,"Almonds": 2.1,"Paneer": 1.9,"Tofu": 1.6,"Oats": 1.3,"Greek Yogurt": 1.0,"Dal": 0.5,"Rajma": 0.9,"Chole": 0.9,"Milk": 0.34,"Roti": 1.0,"Rice": 0.3}
+        print(f"{'Food':<20}{'Protein/10 g'}")
+        print("-" * 35)
+        for food, protein in protein_guide.items():
+            print(f"{food:<20}{protein}")
     while True:
         print("======NUTRITION======")
         print("1 - Add Food")
