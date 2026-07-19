@@ -28,9 +28,9 @@ def workouttracker():
         mediumday1=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
         mediumday2=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
         mediumday3=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
-        mediumday2=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
-        mediumday3=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
-        mediumday3=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
+        mediumday4=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
+        mediumday5=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
+        mediumday6=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
     def advancedtemplate():
         print("hi")
     def selfworkouts():
