@@ -123,7 +123,7 @@ def nutrition():
                             totalcals+=float(row[6])
                             found=True
                 if found:
-                    print("Total Calories",totalcals)
+                    print("Total Today's Calories",totalcals)
                 else:
                     print("No Food Entry on this date")
             elif choose==2:
@@ -151,7 +151,64 @@ def nutrition():
             else:
                 print("Invalid Input")
     def macros():
-        pass
+        from datetime import datetime
+        import csv
+        while True:
+            choose=int(input("1 - Total of All Macros of Today / 2 - To See Total of All Macros of a particular date / 2 - Exit : "))
+            if choose==1:
+                from datetime import date
+                today=date.today().strftime("%d-%m-%Y")
+                with open("nutrition.csv","r") as file:
+                    reader=csv.reader(file)
+                    next(reader)
+                    totalpro=0
+                    totalcarbs=0
+                    totalfats=0
+                    found=False
+                    for row in reader:
+                        if row[0]==today:
+                            totalpro+=float(row[7])
+                            totalcarbs+=float(row[8])
+                            totalfats+=float(row[9])
+                            found=True
+                if found:
+                    print("Total Calories",totalcals)
+                    while True:
+                        print("choose what you want to Total of:")
+                        print("1 - All")
+                        print("2 - Protein")
+                        print("3 - Carbs")
+                        print("4 - Fats")
+                        print("5 - Exit")
+                        tot=int(input("choose between(1,2,3,4,5):"))
+                        if tot==1:
+                            print("Total Today's Protein")
+                else:
+                    print("No Food Entry on this date")
+            elif choose==2:
+                newuserdate=input("Enter date(dd-mm-yyyy): ")
+                try:
+                    datetime.strptime(newuserdate,"%d-%m-%Y")#for checking if date is valid
+                except ValueError:
+                    print("Invalid Date!,please enter a valid date in the format dd-mm-yyyy.")
+                    continue
+                with open("nutrition.csv","r") as file:
+                    reader=csv.reader(file)
+                    next(reader)
+                    totalcals=0
+                    found=False
+                    for row in reader:
+                        if row[0]==newuserdate:
+                            totalcals+=float(row[6])
+                            found=True
+                if found:
+                    print("Total Calories: ",totalcals)
+                else:
+                    print("No Food Entry on this date")
+            elif choose==3:
+                break
+            else:
+                print("Invalid Input")
     def protein_guide():
         pass
     while True:
