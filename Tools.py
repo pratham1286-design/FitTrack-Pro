@@ -77,6 +77,10 @@ def Tools():
                     print("Invalid gender.")
                     return
                 print(f"Your BMR is: {bmr:.2f} kcal/day")
+            elif br==3:
+                break
+            else:
+                print("Invalid Input")
     def DailyCalreq():
         pass
     def TDEE():
