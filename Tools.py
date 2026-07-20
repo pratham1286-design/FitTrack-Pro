@@ -1,6 +1,16 @@
 def Tools():
+    import csv
     def bmi():
-        pass
+        while True:
+            
+            with open("userinfo.csv","r") as file:
+                reader=csv.DictReader(file)
+                for row in reader:
+                    height_cm=float(row["Height"])
+                    weight=float(row["Weight"])
+                height_m=height_cm/100
+                bmi=weight/(height_m**2)
+                print("Your BMI: ",bmi)
     def bmr():
         pass
     def DailyCalreq():
