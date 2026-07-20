@@ -42,61 +42,98 @@ def Tools():
             else:
                 print("Invalid Input")
     def bmr():
-        while True:
-            print("choose the option: ")
-            print("1 - Your BMR")
-            print("2 - Calculate other BMR")
-            print("3 - Go Back")
-            br=int(input("Choose the function you want to use(1,2,3): "))
-            if br==1:
-                with open("userinfo.csv","r") as file:
-                    reader=csv.DictReader(file)
-                    for row in reader:
-                        height_cm=float(row["Height"])
-                        weight=float(row["Weight"])
-                        age=int(row["Age"])
-                        gender=(row["Gender"])
-                        if gender=="Male":
-                            bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) + 5
-                        elif gender=="Female":
-                            bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) - 161
-                        else:
-                            print("Invalid Gender")
-                            return
-                    print(f"Your BMR is: {bmr:.2f} kcal/day")
-            elif br==2:
-                weight = float(input("Enter your weight (kg): "))
-                height = float(input("Enter your height (cm): "))
-                age = int(input("Enter your age: "))
-                gender = input("Enter your gender (M/F): ").upper()
-                if gender == "M":
-                    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5
-                elif gender == "F":
-                    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161
+        with open("userinfo.csv","r") as file:
+            reader=csv.DictReader(file)
+            for row in reader:
+                height_cm=float(row["Height"])
+                weight=float(row["Weight"])
+                age=int(row["Age"])
+                gender=(row["Gender"])
+                if gender=="Male":
+                    bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) + 5
+                elif gender=="Female":
+                    bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) - 161
                 else:
-                    print("Invalid gender.")
+                    print("Invalid Gender")
                     return
                 print(f"Your BMR is: {bmr:.2f} kcal/day")
-            elif br==3:
-                break
-            else:
-                print("Invalid Input")
-    def DailyCalreq():
-        pass
+        return bmr
     def TDEE():
-        pass
+        bmr=bmr()
+        print("\nSelect Activity Level")
+        print("1. Sedentary")
+        print("2. Lightly Active")
+        print("3. Moderately Active")
+        print("4. Very Active")
+        print("5. Extra Active")
+        choice = int(input("Enter choice: "))
+        if choice == 1:
+            activity = 1.2
+        elif choice == 2:
+            activity = 1.375
+        elif choice == 3:
+            activity = 1.55
+        elif choice == 4:
+            activity = 1.725
+        elif choice == 5:
+            activity = 1.9
+        else:
+            print("Invalid Choice")
+            return
+        tdee = bmr * activity
+        print(f"\nYour TDEE is : {tdee:.2f} kcal/day")
+        return tdee
+    def DailyCalreq():
+        tdee=TDEE()
+        import csv
+        with open("data/userinfo.csv", "r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                goal = row["Fitness_Goal"].lower()
+        if goal == "Lose Fat":
+            calories = tdee - 500
+        elif goal == "Muscle Building":
+            calories = tdee + 300
+        else:
+            calories = tdee
+        print(f"\nDaily Calories Required : {calories:.2f} kcal/day")
     def dailymacros():
-        pass
+        calories = DailyCalreq()
+        with open("data/userinfo.csv","r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                weight = float(row["Weight"])
+        protein = weight * 2
+        fat = (calories * 0.25) / 9
+        carbs = (calories - (protein * 4 + fat * 9)) / 4
+        print(f"\nProtein : {protein:.2f} g")
+        print(f"Carbs   : {carbs:.2f} g")
+        print(f"Fats    : {fat:.2f} g")
     def waterintake():
-        pass
+        with open("data/userinfo.csv","r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                weight = float(row["Weight"])
+        water = weight * 35
+        print(f"\nDaily Water Intake : {water/1000:.2f} Litres")
     def idealweight():
-        pass
+        with open("data/userinfo.csv","r") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                gender = row["Gender"].lower()
+                height = float(row["Height"])
+            inches = height / 2.54
+        if gender == "male":
+            ideal = 50 + 2.3 * (inches - 60)
+        else:
+            ideal = 45.5 + 2.3 * (inches - 60)
+        print(f"\nIdeal Weight : {ideal:.2f} kg")
     while True:
         print("======Fitness Tools======")
         print("1 - BMI")
         print("2 - BMR")
-        print("3 - Calculate Daily Calories requirement")
-        print("4 - TDEE")
+        print("3 - TDEE")
+        print("4 - Calculate Daily Calories requirement")
         print("5 - Calculate Daily Macros")
         print("6 - Total Water Intake")
         print("7 - Calculate Your Ideal Weight")
@@ -106,9 +143,9 @@ def Tools():
             bmi()
         elif tools==2:
             bmr()
-        elif tools==3:
-            DailyCalreq()
         elif tools==4:
+            DailyCalreq()
+        elif tools==3:
             TDEE()
         elif tools==5:
             dailymacros()
