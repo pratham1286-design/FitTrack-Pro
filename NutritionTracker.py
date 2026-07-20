@@ -259,7 +259,7 @@ def nutrition():
         print("4 - Total Macros")
         print("5 - Protein Guide")
         print("6 - Exit")
-        nut=int(input("Select the option(1,2,3,4,5,6,): "))
+        nut=int(input("Select the option(1,2,3,4,5,6): "))
         if nut==1:
             add_food()
         elif nut==2:
