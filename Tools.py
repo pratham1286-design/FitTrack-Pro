@@ -2,17 +2,54 @@ def Tools():
     import csv
     def bmi():
         while True:
-            
-            with open("userinfo.csv","r") as file:
-                reader=csv.DictReader(file)
-                for row in reader:
-                    height_cm=float(row["Height"])
-                    weight=float(row["Weight"])
-                height_m=height_cm/100
-                bmi=weight/(height_m**2)
-                print("Your BMI: ",bmi)
+            print("choose the option: ")
+            print("1 - Your BMI")
+            print("2 - Calculate other BMI")
+            print("3 - Go Back")
+            bm=int(input("Choose the function you want to use(1,2,3): "))
+            if bm==1:
+                with open("userinfo.csv","r") as file:
+                    reader=csv.DictReader(file)
+                    for row in reader:
+                        height_cm=float(row["Height"])
+                        weight=float(row["Weight"])
+                    height_m=float(height_cm/100)
+                    bmi=weight/(height_m**2)
+                    print("Your BMI: ",bmi)
+                    if bmi<18.5:
+                        print("UnderWeight")
+                    elif bmi<25:
+                        print("Normal Weight")
+                    elif bmi<30:
+                        print("Overweight")
+                    else:
+                        print("Obese")
+            elif bm==2:
+                    weight=float(input("Input Weight in kgs: "))
+                    height=float(input("Input Height in metres: "))
+                    bmi=weight/(height**2)
+                    print("Your BMI: ",bmi)
+                    if bmi<18.5:
+                        print("UnderWeight")
+                    elif bmi<25:
+                        print("Normal Weight")
+                    elif bmi<30:
+                        print("Overweight")
+                    else:
+                        print("Obese")
+            elif bm==3:
+                break
+            else:
+                print("Invalid Input")
     def bmr():
-        pass
+        while True:
+            print("choose the option: ")
+            print("1 - Your BMR")
+            print("2 - Calculate other BMR")
+            print("3 - Go Back")
+            br=int(input("Choose the function you want to use(1,2,3): "))
+            if br==1:
+                
     def DailyCalreq():
         pass
     def TDEE():
