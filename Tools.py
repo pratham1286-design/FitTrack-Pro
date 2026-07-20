@@ -49,7 +49,34 @@ def Tools():
             print("3 - Go Back")
             br=int(input("Choose the function you want to use(1,2,3): "))
             if br==1:
-                
+                with open("userinfo.csv","r") as file:
+                    reader=csv.DictReader(file)
+                    for row in reader:
+                        height_cm=float(row["Height"])
+                        weight=float(row["Weight"])
+                        age=int(row["Age"])
+                        gender=(row["Gender"])
+                        if gender=="Male":
+                            bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) + 5
+                        elif gender=="Female":
+                            bmr = (10 * weight) + (6.25 * height_cm) - (5 * age) - 161
+                        else:
+                            print("Invalid Gender")
+                            return
+                    print(f"Your BMR is: {bmr:.2f} kcal/day")
+            elif br==2:
+                weight = float(input("Enter your weight (kg): "))
+                height = float(input("Enter your height (cm): "))
+                age = int(input("Enter your age: "))
+                gender = input("Enter your gender (M/F): ").upper()
+                if gender == "M":
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5
+                elif gender == "F":
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161
+                else:
+                    print("Invalid gender.")
+                    return
+                print(f"Your BMR is: {bmr:.2f} kcal/day")
     def DailyCalreq():
         pass
     def TDEE():
