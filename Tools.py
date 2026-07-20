@@ -59,7 +59,7 @@ def Tools():
                 print(f"Your BMR is: {bmr:.2f} kcal/day")
         return bmr
     def TDEE():
-        bmr=bmr()
+        bmr_value=bmr()
         print("\nSelect Activity Level")
         print("1. Sedentary")
         print("2. Lightly Active")
@@ -80,13 +80,13 @@ def Tools():
         else:
             print("Invalid Choice")
             return
-        tdee = bmr * activity
+        tdee = bmr_value * activity
         print(f"\nYour TDEE is : {tdee:.2f} kcal/day")
         return tdee
     def DailyCalreq():
         tdee=TDEE()
         import csv
-        with open("data/userinfo.csv", "r") as file:
+        with open("userinfo.csv", "r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 goal = row["Fitness_Goal"].lower()
@@ -99,7 +99,7 @@ def Tools():
         print(f"\nDaily Calories Required : {calories:.2f} kcal/day")
     def dailymacros():
         calories = DailyCalreq()
-        with open("data/userinfo.csv","r") as file:
+        with open("userinfo.csv","r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 weight = float(row["Weight"])
@@ -110,7 +110,7 @@ def Tools():
         print(f"Carbs   : {carbs:.2f} g")
         print(f"Fats    : {fat:.2f} g")
     def waterintake():
-        with open("data/userinfo.csv","r") as file:
+        with open("userinfo.csv","r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 weight = float(row["Weight"])
