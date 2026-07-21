@@ -72,7 +72,7 @@ def workouttracker():
                     writer.writerows(mediumday4)
                     for exercise in mediumday4:
                         date,level,name,sets,reps,weight,duration,calories=exercise
-                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
+                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==5:
                 import csv
                 with open("workouts.csv","a",newline="") as file:
@@ -80,7 +80,7 @@ def workouttracker():
                     writer.writerows(mediumday5)
                     for exercise in mediumday5:
                         date,level,name,sets,reps,weight,duration,calories=exercise
-                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
+                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==6:
                 import csv
                 with open("workouts.csv","a",newline="") as file:
@@ -88,7 +88,7 @@ def workouttracker():
                     writer.writerows(mediumday6)
                     for exercise in mediumday6:
                         date,level,name,sets,reps,weight,duration,calories=exercise
-                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
+                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==7:
                 break
             else:
