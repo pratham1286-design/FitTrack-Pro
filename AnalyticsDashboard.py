@@ -8,10 +8,9 @@ def analytics():
             next(reader)
             for row in reader:
                 name=row[1]
-                age=row[2]
-                height_cm=row[4]
-                curweight=row[5]
-                Fitnessgoal=row[7]
+                age=int(row[2])
+                height_cm=float(row[4])
+                curweight=float(row[5])
                 height_m=float(height_cm/100)
                 bmi=curweight/(height_m**2)
                 if bmi<18.5:
@@ -26,7 +25,7 @@ def analytics():
                 else:
                     print("Obese")
                     condition="Obese"
-                gender=(row[3])
+                gender=row[3]
                 if gender=="Male":
                     bmr = (10 * curweight) + (6.25 * height_cm) - (5 * age) + 5
                     them="his"
@@ -56,8 +55,8 @@ def analytics():
                     print("Invalid Choice")
                     return
                 tdee = bmr * activity
-                print(f"Name : {name} of {age}years age with height:{height_cm}cm and weight:{curweight}kgs has a BMI of {bmi} making {otherthem} - {condition} and {them} BMR is {bmr} and {them} TDEE based on {them} activity level is {tdee} ")
-                return name,Fitnessgoal
+                print(f"Name : {name} of {age}years age with height:{height_cm}cm and weight:{curweight}kgs has a BMI of {bmi} making {otherthem} - {condition} and {them} BMR is {bmr:.2f} and {them} TDEE based on {them} activity level is {tdee} ")
+                return name
     def nutrisum():
         with open("nutrition.csv","r") as file:
             reader=csv.reader(file)
@@ -68,10 +67,10 @@ def analytics():
             fatconsumed=0
             for row in reader:
                 if row[0]==today:
-                    calsconsumed+=row[6]
-                    proconsumed+=row[7]
-                    carbsconsumed+=row[8]
-                    fatconsumed+=row[9]
+                    calsconsumed+=float(row[6])
+                    proconsumed+=float(row[7])
+                    carbsconsumed+=float(row[8])
+                    fatconsumed+=float(row[9])
                     nameofstudent=usersum()
                 print(f"Name : {nameofstudent}, today's consumed calories = {calsconsumed} kcal , today's consumed protein = {proconsumed},today's consumed carbs = {carbsconsumed},today's consumed fats = {fatconsumed}.")
     def worksum():
