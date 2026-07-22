@@ -3,7 +3,6 @@ def analytics():
     today=date.today()
     import csv
     def usersum():
-        pass
         with open("userinfo.csv","r") as file:
             reader=csv.reader(file)
             next(reader)
@@ -12,6 +11,7 @@ def analytics():
                 age=row[2]
                 height_cm=row[4]
                 curweight=row[5]
+                Fitnessgoal=row[7]
                 height_m=float(height_cm/100)
                 bmi=curweight/(height_m**2)
                 if bmi<18.5:
@@ -57,9 +57,8 @@ def analytics():
                     return
                 tdee = bmr * activity
                 print(f"Name : {name} of {age}years age with height:{height_cm}cm and weight:{curweight}kgs has a BMI of {bmi} making {otherthem} - {condition} and {them} BMR is {bmr} and {them} TDEE based on {them} activity level is {tdee} ")
-                return name
+                return name,Fitnessgoal,tdee
     def nutrisum():
-        pass
         with open("nutrition.csv","r") as file:
             reader=csv.reader(file)
             next(reader)
@@ -77,7 +76,27 @@ def analytics():
                 print(f"Name : {nameofstudent}, today's consumed calories = {calsconsumed} kcal , today's consumed protein = {proconsumed},today's consumed carbs = {carbsconsumed},today's consumed fats = {fatconsumed}.")
                 return calsconsumed,proconsumed,carbsconsumed,fatconsumed
     def worksum():
-        pass
+        total_workouts = 0
+        total_duration = 0
+        total_burned = 0
+        try:
+            with open("workouts.csv", "r") as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    total_workouts += 1
+                    total_duration += float(row["Duration(mins)"])
+                    total_burned += float(row["Calories(kcal)"])
+        except FileNotFoundError:
+            print("No workout data found yet.")
+            return
+        if total_workouts == 0:
+            print("workout.csv is empty.")
+            return
+        print(f"\n--- Workout Summary ---")
+        print(f"Total Workouts      : {total_workouts}")
+        print(f"Total Duration      : {total_duration:.0f} min")
+        print(f"Total Cal Burned    : {total_burned:.0f} kcal")
+        print(f"Avg Duration/Workout: {total_duration / total_workouts:.1f} min")
     def dailyprogress():
         pass
     def report():
