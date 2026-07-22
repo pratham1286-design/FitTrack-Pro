@@ -89,7 +89,7 @@ def Tools():
         with open("userinfo.csv", "r") as file:
             reader = csv.DictReader(file)
             for row in reader:
-                goal = row["Fitness_Goal"].lower()
+                goal = row["Fitness_Goal"]
         if goal == "Lose Fat":
             calories = tdee - 500
         elif goal == "Muscle Building":
