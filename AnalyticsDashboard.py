@@ -78,9 +78,7 @@ def analytics():
                 return calsconsumed,proconsumed,carbsconsumed,fatconsumed
     def worksum():
         pass
-    def bodyprogress():
-        pass
-    def goalprogress():
+    def dailyprogress():
         pass
     def report():
         pass
@@ -91,11 +89,10 @@ def analytics():
         print("1 - User Summary")
         print("2 - Nutrition Analytics")
         print("3 - Workout Analytics")
-        print("4 - Body Progress")
-        print("5 - Goal Progress")
-        print("6 - Weekly/Monthly Reports")
-        print("7 - Recommendations")
-        print("8 - Back")
+        print("4 - Daily Progress")
+        print("5 - Weekly/Monthly Reports")
+        print("6 - Recommendations")
+        print("7 - Back")
         ana=int(input("Choose the function(1,2,3,4,5,6,7,8): "))
         if ana==1:
             usersum()
@@ -104,14 +101,12 @@ def analytics():
         elif ana==3:
             worksum()
         elif ana==4:
-            bodyprogress()
+            dailyprogress()
         elif ana==5:
-            goalprogress()
-        elif ana==7:
             recommendations()
         elif ana==6:
             report()
-        elif ana==8:
+        elif ana==7:
             break
         else:
             print("Invalid Input")
