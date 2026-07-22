@@ -1,4 +1,6 @@
 def analytics():
+    from datetime import date
+    today=date.today()
     import csv
     def usersum():
         pass
@@ -55,8 +57,25 @@ def analytics():
                     return
                 tdee = bmr * activity
                 print(f"Name : {name} of {age}years age with height:{height_cm}cm and weight:{curweight}kgs has a BMI of {bmi} making {otherthem} - {condition} and {them} BMR is {bmr} and {them} TDEE based on {them} activity level is {tdee} ")
+                return name
     def nutrisum():
         pass
+        with open("nutrition.csv","r") as file:
+            reader=csv.reader(file)
+            next(reader)
+            calsconsumed=0
+            proconsumed=0
+            carbsconsumed=0
+            fatconsumed=0
+            for row in reader:
+                if row[0]==today:
+                    calsconsumed+=row[6]
+                    proconsumed+=row[7]
+                    carbsconsumed+=row[8]
+                    fatconsumed+=row[9]
+                    nameofstudent=usersum()
+                print(f"Name : {nameofstudent}, today's consumed calories = {calsconsumed} kcal , today's consumed protein = {proconsumed},today's consumed carbs = {carbsconsumed},today's consumed fats = {fatconsumed}.")
+                return calsconsumed,proconsumed,carbsconsumed,fatconsumed
     def worksum():
         pass
     def bodyprogress():
