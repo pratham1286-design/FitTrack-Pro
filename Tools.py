@@ -97,6 +97,7 @@ def Tools():
         else:
             calories = tdee
         print(f"\nDaily Calories Required : {calories:.2f} kcal/day")
+        return calories
     def dailymacros():
         calories = DailyCalreq()
         with open("userinfo.csv","r") as file:
@@ -117,7 +118,7 @@ def Tools():
         water = weight * 35
         print(f"\nDaily Water Intake : {water/1000:.2f} Litres")
     def idealweight():
-        with open("data/userinfo.csv","r") as file:
+        with open("userinfo.csv","r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 gender = row["Gender"].lower()
