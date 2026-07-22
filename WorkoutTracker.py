@@ -116,7 +116,6 @@ def workouttracker():
                 break
             else:
                 print("Invalid input")
-        
     def suggestedworkouts():
         while True:
             print("Choose your Workout Template: ")
