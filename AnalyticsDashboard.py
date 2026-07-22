@@ -97,7 +97,7 @@ def analytics():
         print(f"Total Duration      : {total_duration:.0f} min")
         print(f"Total Cal Burned    : {total_burned:.0f} kcal")
         print(f"Avg Duration/Workout: {total_duration / total_workouts:.1f} min")
-    def dailyprogress():
+    def dailynutriprogress():
         pass
     def report():
         pass
@@ -120,7 +120,7 @@ def analytics():
         elif ana==3:
             worksum()
         elif ana==4:
-            dailyprogress()
+            dailynutriprogress()
         elif ana==5:
             recommendations()
         elif ana==6:
