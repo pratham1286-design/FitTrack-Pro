@@ -8,6 +8,7 @@ def userinfo():
         gender="Female"
     else:
         print("invalid input")
+        return
     print(gender)
     Height=int(input("Height(cm): "))
     Weight=int(input("Current Weight(kgs): "))
@@ -20,13 +21,13 @@ def userinfo():
     elif FitnessGoal==3:
         FitnessGoal="Maintaining Weight"
     else:
-        FitnessGoal="Muscle Building"
         print("invalid input")
+        return
     from datetime import date
     today=date.today()
     new_row=[today,Name,Age,gender,Height,Weight,Goal_Weight,FitnessGoal]
     import csv
     with open("userinfo.csv","w") as file:
         writer=csv.writer(file)
-        writer.writerows(new_row)
+        writer.writerow(new_row)
     print("Saved User Data Successfully")
