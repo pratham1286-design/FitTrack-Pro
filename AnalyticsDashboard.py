@@ -57,7 +57,7 @@ def analytics():
                     return
                 tdee = bmr * activity
                 print(f"Name : {name} of {age}years age with height:{height_cm}cm and weight:{curweight}kgs has a BMI of {bmi} making {otherthem} - {condition} and {them} BMR is {bmr} and {them} TDEE based on {them} activity level is {tdee} ")
-                return name,Fitnessgoal,tdee
+                return name,Fitnessgoal
     def nutrisum():
         with open("nutrition.csv","r") as file:
             reader=csv.reader(file)
@@ -74,7 +74,6 @@ def analytics():
                     fatconsumed+=row[9]
                     nameofstudent=usersum()
                 print(f"Name : {nameofstudent}, today's consumed calories = {calsconsumed} kcal , today's consumed protein = {proconsumed},today's consumed carbs = {carbsconsumed},today's consumed fats = {fatconsumed}.")
-                return calsconsumed,proconsumed,carbsconsumed,fatconsumed
     def worksum():
         total_workouts = 0
         total_duration = 0
@@ -90,29 +89,20 @@ def analytics():
             print("No workout data found yet.")
             return
         if total_workouts == 0:
-            print("workout.csv is empty.")
+            print("workouts.csv is empty.")
             return
         print(f"\n--- Workout Summary ---")
         print(f"Total Workouts      : {total_workouts}")
         print(f"Total Duration      : {total_duration:.0f} min")
         print(f"Total Cal Burned    : {total_burned:.0f} kcal")
         print(f"Avg Duration/Workout: {total_duration / total_workouts:.1f} min")
-    def dailynutriprogress():
-        pass
-    def report():
-        pass
-    def recommendations():
-        pass
     while True:
         print("="*10,"Analytics Dashboard","="*10)
         print("1 - User Summary")
         print("2 - Nutrition Analytics")
         print("3 - Workout Analytics")
-        print("4 - Daily Progress")
-        print("5 - Weekly/Monthly Reports")
-        print("6 - Recommendations")
-        print("7 - Back")
-        ana=int(input("Choose the function(1,2,3,4,5,6,7,8): "))
+        print("4 - Back")
+        ana=int(input("Choose the function(1,2,3,4): "))
         if ana==1:
             usersum()
         elif ana==2:
@@ -120,12 +110,6 @@ def analytics():
         elif ana==3:
             worksum()
         elif ana==4:
-            dailynutriprogress()
-        elif ana==5:
-            recommendations()
-        elif ana==6:
-            report()
-        elif ana==7:
             break
         else:
             print("Invalid Input")
