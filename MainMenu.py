@@ -11,7 +11,7 @@ while True:
     print("5 - Fitness Tools")
     print("6 - Analytics Dashboard")
     print("7 - break")
-    main=int(input("Choose between (1,2,3,4,5,6,7):"))
+    main=int(input("Choose between (1,2,3,4,5,6,7): "))
     if main==1:
         from Profile import userinfo
         userinfo()
