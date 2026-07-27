@@ -151,12 +151,12 @@ def workouttracker():
                     writer=csv.writer(file)
                     writer.writerows(mediumday6)
                     for exercise in mediumday6:
-                                date,level,name,sets,reps,weight,duration,calories=exercise
-                                print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
-                    elif day==7:
-                        break
-                    else:
-                        print("Invalid Input")
+                        date,level,name,sets,reps,weight,duration,calories=exercise
+                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
+            elif day==7:
+                break
+            else:
+                print("Invalid Input")
     def selfworkouts():
         while True:
             print("Choose if you want to add Exercise")
