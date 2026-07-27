@@ -95,12 +95,12 @@ def workouttracker():
                 print("Invalid Input")
     def advancedtemplate():
         import csv
-        advancedday1=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
-        advancedday2=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
-        advancedday3=[[today,"medium","Barbell Bench Press",3,15,32.5,10,40],[today,"medium","Incline Dumbbell Press",3,12,15,10,35],[today,"medium","Chest Fly",3,12,25,10,30],[today,"medium","Weighted Chest Dips",3,12,15,10,30],[today,"medium","High to Low Cable Fly",3,12,7.5,10,35]]
-        advancedday4=[[today,"medium","Cable Triceps Pushdown",3,12,10,10,30],[today,"medium","Overhead Dumbbell Tricep Extensions",3,12,5,10,30],[today,"medium","Skull Crushers",3,12,5,10,30],[today,"medium","Close Grip Bench Press",3,12,5,10,30]]
-        advancedday5=[[today,"medium","Barbell Overhead Press",3,12,32.5,10,40],[today,"medium","Dumbbell Lateral Raises",3,12,15,10,35],[today,"medium","Rear Delt Fly",3,12,25,10,30],[today,"medium","Cable Lateral Raise",3,12,15,10,30],[today,"medium","Face Pull",3,12,7.5,10,35]]
-        advancedday6=[[today,"medium","Barbell Back Squat",3,12,32.5,10,40],[today,"medium","Leg press",3,12,15,10,35],[today,"medium","Romanaian DeadLift",3,12,25,10,30],[today,"medium","Leg Extension",3,12,15,10,30],[today,"medium","Seated Calf Raises",3,12,7.5,10,35]]
+        advancedday1=[[today,"advanced","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
+        advancedday2=[[today,"advanced","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
+        advancedday3=[[today,"advanced","Barbell Bench Press",3,15,32.5,10,40],[today,"medium","Incline Dumbbell Press",3,12,15,10,35],[today,"medium","Chest Fly",3,12,25,10,30],[today,"medium","Weighted Chest Dips",3,12,15,10,30],[today,"medium","High to Low Cable Fly",3,12,7.5,10,35]]
+        advancedday4=[[today,"advanced","Cable Triceps Pushdown",3,12,10,10,30],[today,"medium","Overhead Dumbbell Tricep Extensions",3,12,5,10,30],[today,"medium","Skull Crushers",3,12,5,10,30],[today,"medium","Close Grip Bench Press",3,12,5,10,30]]
+        advancedday5=[[today,"advanced","Barbell Overhead Press",3,12,32.5,10,40],[today,"medium","Dumbbell Lateral Raises",3,12,15,10,35],[today,"medium","Rear Delt Fly",3,12,25,10,30],[today,"medium","Cable Lateral Raise",3,12,15,10,30],[today,"medium","Face Pull",3,12,7.5,10,35]]
+        advancedday6=[[today,"advanced","Barbell Back Squat",3,12,32.5,10,40],[today,"medium","Leg press",3,12,15,10,35],[today,"medium","Romanaian DeadLift",3,12,25,10,30],[today,"medium","Leg Extension",3,12,15,10,30],[today,"medium","Seated Calf Raises",3,12,7.5,10,35]]
         while True:
             print("Choose the day of the MEDIUM WORKOUT: ")
             print("1 - Day1 [UPPER 1]")
