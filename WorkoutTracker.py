@@ -123,7 +123,8 @@ def workouttracker():
                     writer=csv.writer(file)
                     writer.writerows(advancedday2)
                     for exercise in advancedday2:
-                        date,level,name,sets,reps,weight,duration,calories=exercise                            print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
+                        date,level,name,sets,reps,weight,duration,calories=exercise                            
+                        print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
             elif day==3:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
