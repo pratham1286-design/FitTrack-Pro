@@ -103,12 +103,12 @@ def workouttracker():
         advancedday6=[[today,"medium","Barbell Back Squat",3,12,32.5,10,40],[today,"medium","Leg press",3,12,15,10,35],[today,"medium","Romanaian DeadLift",3,12,25,10,30],[today,"medium","Leg Extension",3,12,15,10,30],[today,"medium","Seated Calf Raises",3,12,7.5,10,35]]
         while True:
             print("Choose the day of the MEDIUM WORKOUT: ")
-            print("1 - Day1 [BACK DAY]")
-            print("2 - Day2 [BICEP DAY]")
-            print("3 - Day3 [CHEST DAY]")
-            print("4 - Day4 [TRICEP DAY]")
-            print("5 - Day5 [SHOULDER DAY]")
-            print("6 - Day6 [LEG DAY]")
+            print("1 - Day1 [UPPER 1]")
+            print("2 - Day2 [LOWER]")
+            print("3 - Day3 [PUSH]")
+            print("4 - Day4 [PULL]")
+            print("5 - Day5 [LEGS]")
+            print("6 - Day6 [UPPER 2]")
             print("7 - EXIT")
             day=int(input("Choose the Day(1,2,3,4,5,6,7): "))
             if day==1:
