@@ -95,7 +95,6 @@ def workouttracker():
                 print("Invalid Input")
     def advancedtemplate():
         import csv
-        print("hi")
         advancedday1=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
         advancedday2=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
         advancedday3=[[today,"medium","Barbell Bench Press",3,15,32.5,10,40],[today,"medium","Incline Dumbbell Press",3,12,15,10,35],[today,"medium","Chest Fly",3,12,25,10,30],[today,"medium","Weighted Chest Dips",3,12,15,10,30],[today,"medium","High to Low Cable Fly",3,12,7.5,10,35]]
@@ -115,42 +114,42 @@ def workouttracker():
             if day==1:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday1)
-                    for exercise in mediumday1:
+                    writer.writerows(advancedday1)
+                    for exercise in advancedday1:
                         date,level,name,sets,reps,weight,duration,calories=exercise
                         print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
             elif day==2:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday2)
-                    for exercise in mediumday2:
+                    writer.writerows(advancedday2)
+                    for exercise in advancedday2:
                         date,level,name,sets,reps,weight,duration,calories=exercise                            print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
             elif day==3:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday3)
-                    for exercise in mediumday3:
+                    writer.writerows(advancedday3)
+                    for exercise in advancedday3:
                         date,level,name,sets,reps,weight,duration,calories=exercise
                         print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}, {duration}mins burning {calories}kcal")
             elif day==4:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday4)
-                    for exercise in mediumday4:
+                    writer.writerows(advancedday4)
+                    for exercise in advancedday4:
                         date,level,name,sets,reps,weight,duration,calories=exercise
                         print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==5:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday5)
-                    for exercise in mediumday5:
+                    writer.writerows(advancedday5)
+                    for exercise in advancedday5:
                         date,level,name,sets,reps,weight,duration,calories=exercise
                         print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==6:
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
-                    writer.writerows(mediumday6)
-                    for exercise in mediumday6:
+                    writer.writerows(advancedday6)
+                    for exercise in advancedday6:
                         date,level,name,sets,reps,weight,duration,calories=exercise
                         print(f"{date} : {level} - {name} : {sets}sets*{reps}reps of {weight}kg, {duration}mins burning {calories}kcal")
             elif day==7:
