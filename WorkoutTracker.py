@@ -27,7 +27,7 @@ def workouttracker():
     def mediumtemplate():
         mediumday1=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
         mediumday2=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
-        mediumday3=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
+        mediumday3=[[today,"medium","Barbell Bench Press",3,15,32.5,10,40],[today,"medium","Incline Dumbbell Press",3,12,15,10,35],[today,"medium","Chest Fly",3,12,25,10,30],[today,"medium","Weighted Chest Dips",3,12,15,10,30],[today,"medium","High to Low Cable Fly",3,12,7.5,10,35]]
         mediumday4=[[today,"medium","Bicep Curls",3,12,10,10,30],[today,"medium","EZ Bar Preacher Curls",3,12,5,10,30],[today,"medium","Incline Dumbbell Curls",3,12,5,10,30],[today,"medium","Hammer Curls",3,12,5,10,30]]
         mediumday5=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
         mediumday6=[[today,"medium","Wide Grip Lat pulldown",3,12,32.5,10,40],[today,"medium","Chest Supported T bar row",3,12,15,10,35],[today,"medium","V Grip Lat Pulldown",3,12,25,10,30],[today,"medium","Seated Cable Row",3,12,15,10,30],[today,"medium","Single Arm Dumbbell Row",3,12,7.5,10,35]]
@@ -103,11 +103,11 @@ def workouttracker():
             sel=int(input("Choose what you want to do(1,2) :"))
             if sel==1:
                 Exercise=input("Exercise: ")
-                Sets=int(input("Sets: "))
-                Reps=int(input("Reps: "))
-                Weight_Lifted=int(input("Weight Lifted: "))
-                Duration=int(input("Duration in minutes: "))
-                Calories=int(input("Calories(kcal): "))
+                Sets=float(input("Sets: "))
+                Reps=float(input("Reps: "))
+                Weight_Lifted=float(input("Weight Lifted: "))
+                Duration=float(input("Duration in minutes: "))
+                Calories=float(input("Calories(kcal): "))
                 import csv
                 with open("workouts.csv","a",newline="") as file:
                     writer=csv.writer(file)
