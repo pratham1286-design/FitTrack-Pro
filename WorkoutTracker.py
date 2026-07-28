@@ -100,7 +100,7 @@ def workouttracker():
         advancedday3=[[today,"advanced","Incline Barbell Bench Press",3,15,32.5,10,40],[today,"advanced","Seated Dumbbell Shoulder Press",3,12,15,10,35],[today,"advanced","Cable Chest Fly",3,12,25,10,30],[today,"advanced","Dumbbell Lateral Raise",3,12,15,10,30],[today,"advanced","Cable Triceps Pushdown",3,12,7.5,10,35]]
         advancedday4=[[today,"advanced","Lat Pulldown",3,12,10,10,30],[today,"advanced","Chest Supported Row",3,12,5,10,30],[today,"advanced","Face Pull",3,12,5,10,30],[today,"advanced","EZ Bar Curl",3,12,5,10,30],[today,"advanced","Hammer Curl",3,12,7.5,10,35]]
         advancedday5=[[today,"advanced","Front Squat",3,12,32.5,10,40],[today,"advanced","Romanian Deadlift",3,12,15,10,35],[today,"advanced","Walking Lunges",3,12,25,10,30],[today,"advanced","Leg Extension",3,12,15,10,30],[today,"advanced","Seated Calf Raise",3,12,7.5,10,35]]
-        advancedday6=[[today,"advanced","Barbell Back Squat",3,12,32.5,10,40],[today,"medium","Leg press",3,12,15,10,35],[today,"medium","Romanaian DeadLift",3,12,25,10,30],[today,"medium","Leg Extension",3,12,15,10,30],[today,"medium","Seated Calf Raises",3,12,7.5,10,35]]
+        advancedday6=[[today,"advanced","Incline Dumbbell Bench Press",3,12,32.5,10,40],[today,"advanced","Seated Cable Row",3,12,15,10,35],[today,"advanced","Machine Chest Press",3,12,25,10,30],[today,"advanced","Wide Grip Lat Pulldown",3,12,15,10,30],[today,"advanced","Rear Delt Fly",3,12,7.5,10,35]]
         while True:
             print("Choose the day of the MEDIUM WORKOUT: ")
             print("1 - Day1 [UPPER 1]")
